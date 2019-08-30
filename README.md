@@ -19,6 +19,13 @@ library(devtools)
 install_github("Dalcatruz/compol")
 ```
 
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Dalcatruz/compol")
+```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
