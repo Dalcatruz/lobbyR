@@ -14,3 +14,5 @@
 hello <- function(x) {
   print(paste0("Hola amigo/a ",x, " bienvenido a comportamiento politico y electoral de APCP"))
 }
+
+
