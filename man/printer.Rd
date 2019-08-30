@@ -18,5 +18,5 @@ A tibble
 Title
 }
 \examples{
-printer(x=rnorm(10), r= rnorm(10))
+printer(x=rnorm(5), r= rnorm(5))
 }
