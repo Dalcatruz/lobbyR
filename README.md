@@ -1,10 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Travis build
+status](https://travis-ci.org/profile/Dalcatruz/compol.svg?branch=master)](https://travis-ci.org/profile/Dalcatruz/compol)
+
 # compol
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/Dalcatruz/compol.svg?branch=master)](https://travis-ci.org/Dalcatruz/compol)
 <!-- badges: end -->
 
 The goal of cpolk is to provide functionality to the content of
