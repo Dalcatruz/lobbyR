@@ -11,7 +11,7 @@
 #'@importFrom utils head adist
 #'@importFrom dplyr select
 #'@examples
-#' printer(x=rnorm(10), r= rnorm(10))
+#' printer(x=rnorm(5), r= rnorm(5))
 printer= function(r,x) {
   x=data.frame(x=x, r=r)
   print(head(x))

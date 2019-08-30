@@ -13,7 +13,8 @@ URL: https://github.com/Dalcatruz/compol
 BugReports: https://github.com/Dalcatruz/compol/issues
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
 Imports: 
     tibble,
