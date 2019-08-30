@@ -1,13 +1,19 @@
 #' Title
 #'
-#' @param r
-#' @param x
-#' @param y
+#' @param r what you want in the second column
+#' @param x what you want in the first column
 #'
-#' @return
+#' @return A tibble
 #' @export
 #'
-#' @examples
-printer= function(r,x,y) {
-  print(paste0("x= ",x))
+#'
+#'@importFrom tibble data_frame
+#'@importFrom utils head adist
+#'@importFrom dplyr select
+#'@examples
+#' printer(x=rnorm(10), r= rnorm(10))
+printer= function(r,x) {
+  x=data.frame(x=x, r=r)
+  print(head(x))
+  return(x)
 }
