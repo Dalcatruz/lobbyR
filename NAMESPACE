@@ -2,6 +2,7 @@
 
 export(data_read)
 export(hello)
+export(political_read_data)
 export(printer)
 importFrom(dplyr,select)
 importFrom(readr,read_csv)
