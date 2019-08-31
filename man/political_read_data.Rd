@@ -16,6 +16,6 @@ a \code{tibble}
 Read CSV duplicate (political data juv)
 }
 \examples{
-data_political= ystem.file("extdata","data_political_juv.csv",package = "compol")
+data_political= system.file("extdata","data_political_juv.csv",package = "compol")
 political_read_data(csv)
 }
