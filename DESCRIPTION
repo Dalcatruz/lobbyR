@@ -18,4 +18,5 @@ Suggests:
 VignetteBuilder: knitr
 Imports: 
     tibble,
-    dplyr
+    dplyr,
+    readr
