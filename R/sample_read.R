@@ -7,7 +7,7 @@
 #' @importFrom readr read_csv
 #' @examples
 #' csv= system.file("extdata","sample_data.csv", package = "compol")
-#' sample_read(csv)
+#' data_read (csv)
 data_read=function(path) {
   readr::read_csv(path)
 }
