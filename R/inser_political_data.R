@@ -1,6 +1,6 @@
 library(readr)
 library(tibble)
-data_political_juv <- read_csv("~/base_analysis.csv")
+data_political_juv <- read_csv("data-raw/base_analysis.csv")
 
 
 
