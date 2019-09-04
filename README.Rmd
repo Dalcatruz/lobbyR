@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/Dalcatruz/compol.svg?branch=master)](https://travis-ci.org/Dalcatruz/compol)
 <!-- badges: end -->
 
-The goal of cpolk is to provide functionality to the content of political and electoral behavior.
+The goal of compol is to provide functionality to the content of political and electoral behavior.
 
 ## Installation
 You can install the released version of compol from and with:
@@ -48,16 +48,15 @@ library(compol)
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
+## Ejemplos de trabajo de base de datos
+
+```{r}
+summary(data_political_juv)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+ La función `head()` nos muestra un poco más de la base de datos. Variables y observaciones
+ 
+```{r}
+head(data_political_juv)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
