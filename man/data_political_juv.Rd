@@ -4,7 +4,7 @@
 \name{data_political_juv}
 \alias{data_political_juv}
 \title{Data for anallysis of political interests of the youth}
-\format{A list of principal variables:
+\format{Lista con la descripción de las :
 \describe{
 \item{P38}{Cursando o no cursando el colegio }
 \item{P52_x}{Confianza en las intittuciones, enumeración de 10 instituciones desde P52_1 hasta P52_10 }
