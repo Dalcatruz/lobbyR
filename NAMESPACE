@@ -2,4 +2,5 @@
 
 export(get_audiencias_detalles_activo)
 export(get_audiencias_pag)
+export(lobACT)
 importFrom(jsonlite,fromJSON)
