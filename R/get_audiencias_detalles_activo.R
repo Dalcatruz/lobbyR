@@ -45,7 +45,7 @@ get_audiencias_detalles_activo<- function(num_page, representado) {
   }
 
 
-  filters_auds<- tor[stringr::str_detect(tor$asistentes.representa.nombre,paste0("(?i)",representado)), ]
+  filters_auds<- total_detalle_audiencias[stringr::str_detect(total_detalles_audiencias$asistentes.representa.nombre,paste0("(?i)",representado)), ]
 
   return(filters_auds)
 
