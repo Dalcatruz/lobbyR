@@ -4,7 +4,7 @@
 \alias{lobACT}
 \title{Actualización resumen de datos del lobby}
 \usage{
-lobACT(resumen_lobby)
+lobACT()
 }
 \arguments{
 \item{resumen_lobby}{Muestra un resumen de el numero e instituciones, cargos_pasivos, cargos_activos y audiencias.}

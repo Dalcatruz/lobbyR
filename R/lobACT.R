@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' lobACT(resumen_lobby=1)
-lobACT<- function(resumen_lobby) {
+lobACT<- function() {
 
   url1<-"https://www.leylobby.gob.cl/api/v1/instituciones/"
 
@@ -34,11 +34,19 @@ lobACT<- function(resumen_lobby) {
 
   cargos_activos<- c_activos$total
 
-  resumen_lobby<- cbind.data.frame(instituciones,audiencias, cargos_pasivos,cargos_activos)
+  aud_by_inst<- audiencias/instituciones
+
+  aud_by_cpas<- audiencias/cargos_pasivos
+
+
+  resumen_lobby<- cbind.data.frame(instituciones,audiencias, cargos_pasivos,cargos_activos, aud_by_inst,aud_by_cpas)
+
+
 
   return(resumen_lobby)
 
 
 
 }
+
 
