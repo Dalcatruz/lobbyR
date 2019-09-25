@@ -3,24 +3,13 @@
 
 # lobbyR
 
-El objetivo de lobbyR es facilitar el acceso a datos estructurados en
-forma de dataframe de la API de lobby, mejorando las posibilidades de
-manejo y visualización de datos.
+<!-- badges: start -->
 
-## Installation
-
-You can install the released version of compol from and with:
-
-``` r
-library(devtools)
-install_github("Dalcatruz/lobbyR")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+<!-- badges: end -->
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("Dalcatruz/lobbyR")
+remotes::install_github("Dalcatruz/compol")
 ```
 
 ## Example
@@ -28,11 +17,6 @@ remotes::install_github("Dalcatruz/lobbyR")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-
+library(lobbyR)
 ## basic example code
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-## Ejemplos de trabajo de base de datos

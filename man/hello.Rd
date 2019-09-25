@@ -15,3 +15,10 @@ the output from \code{\link{print}}
 \description{
 My Hello CpyE function
 }
+\examples{
+hello("Sergio" )
+\dontrun{
+hello("Steve")
+}
+
+}
