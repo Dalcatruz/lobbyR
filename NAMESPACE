@@ -3,4 +3,5 @@
 export(get_audiencias_pag)
 export(hello)
 export(political_read_data)
+importFrom(jsonlite,fromJSON)
 importFrom(readr,read_csv)

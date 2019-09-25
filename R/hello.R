@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' hello("Sergio" )
+#' hello("Sergio")
 #' \dontrun{
 #' hello("Steve")
 #' }

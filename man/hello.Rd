@@ -16,7 +16,7 @@ the output from \code{\link{print}}
 My Hello CpyE function
 }
 \examples{
-hello("Sergio" )
+hello("Sergio")
 \dontrun{
 hello("Steve")
 }

@@ -19,6 +19,4 @@ VignetteBuilder: knitr
 Imports: 
     tibble,
     dplyr,
-    readr,
-    jsonlite,
-    httr
+    readr

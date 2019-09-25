@@ -9,7 +9,7 @@
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("Dalcatruz/compol")
+remotes::install_github("Dalcatruz/lobbyR")
 ```
 
 ## Example

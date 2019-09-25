@@ -5,6 +5,8 @@
 #' @param num_page Es el número de paginas de audiencias a retornar, la API devuelve de a 10 audiencias por pagina
 #'
 #' @return Un \dataframe con las audiencias estructuradas
+#'
+#' @importFrom jsonlite fromJSON
 #' @export
 #'
 #' @examples
