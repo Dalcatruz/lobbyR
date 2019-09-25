@@ -4,10 +4,12 @@
 \alias{get_audiencias_pag}
 \title{Obtención de audiencias}
 \usage{
-get_audiencias_pag(num_page)
+get_audiencias_pag(ini_page, num_page)
 }
 \arguments{
-\item{num_page}{Es el número de paginas de audiencias a retornar, la API devuelve de a 10 audiencias por pagina}
+\item{ini_page}{Es el número de pagina inicial de audiencias}
+
+\item{num_page}{Es el número de pagina final de audiencias}
 }
 \value{
 Un \dataframe con las audiencias estructuradas
