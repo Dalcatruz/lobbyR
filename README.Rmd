@@ -31,4 +31,8 @@ library(lobbyR)
 ## basic example code
 ```
 
+```{r}
+mis_audiencias<- get_audiencias_pag(2)
+head(mis_audiencias)
+```
 

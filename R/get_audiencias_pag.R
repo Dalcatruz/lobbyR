@@ -18,7 +18,7 @@ get_audiencias_pag<- function(num_page){
 
   for (i in 1:num_page) {
 
-    acum<-fromJSON(paste0(url,i), flatten = TRUE)$data
+    acum<-jsonlite::fromJSON(paste0(url,i), flatten = TRUE)$data
 
     data_audiencias<- rbind(data_audiencias,acum)
 
