@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_audiencias_detalles_activo.R
 \name{get_audiencias_detalles_activo}
 \alias{get_audiencias_detalles_activo}
-\title{Title}
+\title{Obtener audiencias con detalles de cada sujeto activo y busqueda de un representado en particular}
 \usage{
 get_audiencias_detalles_activo(num_page, representado)
 }
@@ -15,8 +15,9 @@ get_audiencias_detalles_activo(num_page, representado)
 Dataframe con las audiencias de una firma, compañia, empresa y cualquier organización o particular. Entrega la audiencia y e información de todos los que participaron en la audiencia.
 }
 \description{
-Title
+Obtener audiencias con detalles de cada sujeto activo y busqueda de un representado en particular
 }
 \examples{
 get_audiencias_detalles_activo(1,representado='ureta')
+
 }

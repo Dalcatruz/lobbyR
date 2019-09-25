@@ -1,5 +1,5 @@
 
-#' Title
+#' Obtener audiencias con detalles de cada sujeto activo y busqueda de un representado en particular
 #'
 #' @param num_page El número de paginas a retornar.La api entrega 10 audiencias por pagina
 #' @param representado El nombre de una firma, compañia, empresa y cualquier organización o particular que se encuentre en el rango de paginas que buscó.
@@ -9,6 +9,7 @@
 #'
 #' @examples
 #' get_audiencias_detalles_activo(1,representado='ureta')
+#'
 get_audiencias_detalles_activo<- function(num_page, representado) {
 
   url<-"https://www.leylobby.gob.cl/api/v1/audiencias?&page="
