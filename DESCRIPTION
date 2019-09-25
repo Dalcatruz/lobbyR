@@ -12,7 +12,6 @@ RoxygenNote: 6.1.1
 URL: https://github.com/Dalcatruz/lobbyR
 BugReports: https://github.com/Dalcatruz/lobbyR/issues
 Depends:
-    readr,
     jsonlite,
     RCurl,
     httr
