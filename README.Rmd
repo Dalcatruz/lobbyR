@@ -19,20 +19,30 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 ``` r
-# install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("Dalcatruz/lobbyR")
 ```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Cargar libreria
 
 ```{r example}
 library(lobbyR)
 ## basic example code
 ```
 
+## Ejemplo
+
+### Recoger audiencias por pagina
+
 ```{r}
 mis_audiencias<- get_audiencias_pag(2)
+head(mis_audiencias)
+```
+
+
+### Recoger audiencias por página y algún concepto clave
+
+```{r}
+mis_audiencias<- get_audiencias_detalles_activo(2,"ureta")
 head(mis_audiencias)
 ```
 

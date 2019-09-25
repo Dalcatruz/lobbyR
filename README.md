@@ -8,18 +8,20 @@
 <!-- badges: end -->
 
 ``` r
-# install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("Dalcatruz/lobbyR")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Cargar libreria
 
 ``` r
 library(lobbyR)
 ## basic example code
 ```
+
+## Ejemplo
+
+### Recoger audiencias por pagina
 
 ``` r
 mis_audiencias<- get_audiencias_pag(2)
@@ -94,4 +96,43 @@ head(mis_audiencias)
 #> 4 https://www.leylobby.gob.cl/api/v1/audiencias/4
 #> 5 https://www.leylobby.gob.cl/api/v1/audiencias/5
 #> 6 https://www.leylobby.gob.cl/api/v1/audiencias/6
+```
+
+### Recoger audiencias por página y algún concepto clave
+
+``` r
+mis_audiencias<- get_audiencias_detalles_activo(2,"ureta")
+head(mis_audiencias)
+#>    asistentes.id_audiencia asistentes.id_cargo_activo asistentes.nombres
+#> 36                       2                        469               René
+#>    asistentes.apellidos
+#> 36       Ureta Quintana
+#>                              asistentes.cargo_activo_url
+#> 36 https://www.leylobby.gob.cl/api/v1/cargos-activos/469
+#>    asistentes.representa.nombre asistentes.representa.tipo
+#> 36                   Rene Ureta            persona_natural
+#>    asistentes.representa.pais asistentes.representa.giro
+#> 36                        CHL                           
+#>    asistentes.representa.domicilio
+#> 36                                
+#>    asistentes.representa.representante_legal
+#> 36                                          
+#>    asistentes.representa.naturaleza asistentes.representa.directorio
+#> 36                                                                  
+#>    id_sujeto_pasivo id_cargo id_institucion nombres        apellidos
+#> 36              272      197            206 Alberto Undurraga Vicuña
+#>                         cargo           nombre_institucion
+#> 36 Ministro de Obras Públicas Ministerio de Obras Públicas
+#>                                                                                                                                                                                                                                                                                    referencia
+#> 36 La Asociación tiene inquietud en la modificación del reglamento de consultores, donde quieren colaborar. \nRegistro de Contratistas: Asociación manifiesta que la idea es proteger al MOP en relación a asegurar la calidad de los servicios que se prestan en el ámbito de la ingeniería.
+#>    forma                       lugar comuna        fecha_inicio
+#> 36     P Sala reuniones Ministro MOP   <NA> 2014-12-02 19:30:00
+#>          fecha_termino
+#> 36 2014-12-02 20:00:00
+#>                                        sujeto_pasivo_url
+#> 36 https://www.leylobby.gob.cl/api/v1/cargos-pasivos/272
+#>                                         institucion_url
+#> 36 https://www.leylobby.gob.cl/api/v1/instituciones/206
+#>                                       detalles_url
+#> 36 https://www.leylobby.gob.cl/api/v1/audiencias/2
 ```
