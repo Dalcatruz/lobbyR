@@ -16,8 +16,6 @@ remotes::install_github("Dalcatruz/lobbyR")
 
 ``` r
 library(lobbyR)
-
-## basic example code
 ```
 
 ## Ejemplo
@@ -26,14 +24,16 @@ library(lobbyR)
 
 ``` r
 lobACT()
-#>   instituciones audiencias cargos_pasivos cargos_activos
-#> 1           696     369890         272107         275606
+#>  instituciones     audiencias cargos_pasivos cargos_activos    aud_by_inst 
+#>         697.00      369966.00      272280.00      275658.00         530.80 
+#>    aud_by_cpas 
+#>           1.36
 ```
 
 ### Recoger audiencias por pagina
 
 ``` r
-mis_audiencias<- get_audiencias_pag(1)
+mis_audiencias <- get_audiencias_pag(1)
 mis_audiencias
 #>    id_audiencia id_sujeto_pasivo id_cargo id_institucion
 #> 1             1              318      220            157
@@ -161,28 +161,20 @@ mis_audiencias
 ### Recoger audiencias por página y algún concepto clave
 
 ``` r
-mis_audiencias2<- get_audiencias_detalles_activo(1,"ureta")
+mis_audiencias2 <- get_audiencias_detalles_activo(1, "ureta")
 mis_audiencias2
-#>   asistentes.id_audiencia asistentes.id_cargo_activo asistentes.nombres
-#> 9                       2                        469               René
-#>   asistentes.apellidos
-#> 9       Ureta Quintana
-#>                             asistentes.cargo_activo_url
-#> 9 https://www.leylobby.gob.cl/api/v1/cargos-activos/469
-#>   asistentes.representa.nombre asistentes.representa.tipo
-#> 9                   Rene Ureta            persona_natural
-#>   asistentes.representa.pais asistentes.representa.giro
-#> 9                        CHL                           
-#>   asistentes.representa.domicilio
-#> 9                                
-#>   asistentes.representa.representante_legal
-#> 9                                          
-#>   asistentes.representa.naturaleza asistentes.representa.directorio
-#> 9                                                                  
-#>   id_sujeto_pasivo id_cargo id_institucion nombres        apellidos
-#> 9              272      197            206 Alberto Undurraga Vicuña
-#>                        cargo           nombre_institucion
-#> 9 Ministro de Obras Públicas Ministerio de Obras Públicas
+#>   id_audiencia id_cargo_activo nombres.x    apellidos.x
+#> 9            2             469      René Ureta Quintana
+#>                                        cargo_activo_url representa.nombre
+#> 9 https://www.leylobby.gob.cl/api/v1/cargos-activos/469        Rene Ureta
+#>   representa.tipo representa.pais representa.giro representa.domicilio
+#> 9 persona_natural             CHL                                     
+#>   representa.representante_legal representa.naturaleza
+#> 9                                                     
+#>   representa.directorio id_sujeto_pasivo id_cargo id_institucion nombres.y
+#> 9                                    272      197            206   Alberto
+#>        apellidos.y                      cargo           nombre_institucion
+#> 9 Undurraga Vicuña Ministro de Obras Públicas Ministerio de Obras Públicas
 #>                                                                                                                                                                                                                                                                                   referencia
 #> 9 La Asociación tiene inquietud en la modificación del reglamento de consultores, donde quieren colaborar. \nRegistro de Contratistas: Asociación manifiesta que la idea es proteger al MOP en relación a asegurar la calidad de los servicios que se prestan en el ámbito de la ingeniería.
 #>   forma                       lugar comuna        fecha_inicio

@@ -24,7 +24,7 @@ remotes::install_github("Dalcatruz/lobbyR")
 ```
 ## Cargar libreria
 
-```{r example}
+```{r}
 library(lobbyR)
 ```
 
