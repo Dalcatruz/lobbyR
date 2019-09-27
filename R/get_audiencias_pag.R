@@ -13,19 +13,13 @@
 #' @examples
 #' get_audiencias_pag(num_page=3)
 #'
-get_audiencias_pag<- function(ini_page,num_page){
 
-  url<-"https://www.leylobby.gob.cl/api/v1/audiencias?&page="
+get_audiencias_pag <- function(ini_page=1, num_page){
 
-  data_audiencias<- data.frame()
+  url <- "https://www.leylobby.gob.cl/api/v1/audiencias?&page="
 
-  for (i in ini_page:num_page) {
-
-    acum<-jsonlite::fromJSON(paste0(url,i), flatten = TRUE)$data
-
-    data_audiencias<- rbind(data_audiencias,acum)
-
-  }
+  data_audiencias_raw <- lapply(ini_page:num_page, function(x) jsonlite::fromJSON(paste0(url, x), flatten = TRUE)$data)
+  data_audiencias <- do.call(rbind, data_audiencias_raw)
 
   return(data_audiencias)
 
