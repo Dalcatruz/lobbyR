@@ -8,11 +8,11 @@
 #' @export
 #'
 #' @examples
-#' get_audiencias_detalles_activo(1,representado='ureta')
+#' get_audiencias_detalles_activo(1, representado='ureta')
 
-get_audiencias_detalles_activo <- function(num_page,representado) {
+get_audiencias_detalles_activo <- function(num_page, representado) {
 
-  url<-"https://www.leylobby.gob.cl/api/v1/audiencias?&page="
+  url <- "https://www.leylobby.gob.cl/api/v1/audiencias?&page="
 
   data_audiencias_raw <- lapply(1:num_page, function(x) jsonlite::fromJSON(paste0(url, x), flatten = TRUE)$data)
   data_audiencias <- do.call(rbind, data_audiencias_raw)

@@ -17,7 +17,7 @@ lobACT <- function() {
 
   ctotales <- sapply(urls, function(x) jsonlite::fromJSON(x, flatten = TRUE)$total)
 
-  resumen_lobby <- round(c(ctotales, ctotales[2]/ctotales[1], ctotales[2]/ctotales[3]), 2)
+  resumen_lobby <- round(c(ctotales, ctotales[2]/ctotales[1], ctotales[2]/ctotales[3]), 1)
   resumen_lobby <- setNames(resumen_lobby, c("instituciones",
                                              "audiencias",
                                              "cargos_pasivos",

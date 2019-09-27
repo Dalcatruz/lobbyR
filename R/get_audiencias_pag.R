@@ -14,7 +14,7 @@
 #' get_audiencias_pag(num_page=3)
 #'
 
-get_audiencias_pag <- function(ini_page=1, num_page){
+get_audiencias_pag <- function(num_page, ini_page=1){
 
   url <- "https://www.leylobby.gob.cl/api/v1/audiencias?&page="
 
