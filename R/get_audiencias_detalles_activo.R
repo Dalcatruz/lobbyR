@@ -8,45 +8,24 @@
 #' @export
 #'
 #' @examples
-#' get_audiencias_detalles_activo(1,representado='ureta')
-#'
-get_audiencias_detalles_activo<- function(num_page ,representado) {
+#' get_audiencias_detalles_activo(1, representado='ureta')
 
-  url<-"https://www.leylobby.gob.cl/api/v1/audiencias?&page="
+get_audiencias_detalles_activo <- function(num_page, representado) {
 
-  data_audiencias<- data.frame()
+  url <- "https://www.leylobby.gob.cl/api/v1/audiencias?&page="
 
-  for (i in 1:num_page) {
+  data_audiencias_raw <- lapply(1:num_page, function(x) jsonlite::fromJSON(paste0(url, x), flatten = TRUE)$data)
+  data_audiencias <- do.call(rbind, data_audiencias_raw)
 
-    acum<-jsonlite::fromJSON(paste0(url,i), flatten = TRUE)$data
+  detalle_audiencias_urls <- data_audiencias$detalles_url
 
-    data_audiencias<- rbind(data_audiencias,acum)
+  detalle_audiencias_raw <- lapply(detalle_audiencias_urls, function(x) jsonlite::fromJSON(x, flatten = TRUE)$asistentes)
+  detalle_audiencias <- do.call(rbind, detalle_audiencias_raw)
 
-  }
+  total_detalle_audiencias <- merge(detalle_audiencias, data_audiencias, by="id_audiencia")
 
-  detalle_audiencias<- data_audiencias$detalles_url
-
-  ad<- data.frame()
-
-  detail<- data.frame()
-
-  for (i in 1:length(detalle_audiencias)) {
-
-    detalle_by_audiencias<-jsonlite::fromJSON(detalle_audiencias[[i]], flatten = TRUE)[15]
-
-    detalle_by_audiencias <- data.frame(detalle_by_audiencias)
-
-    detail<- rbind(detail,detalle_by_audiencias)
-
-    total_detalle_audiencia<-merge(detail, data_audiencias, by.x="asistentes.id_audiencia", by.y="id_audiencia")
-
-    total_detalle_audiencias<- rbind(ad, total_detalle_audiencia)
-
-  }
-
-  filters_auds<- total_detalle_audiencias[stringr::str_detect(total_detalle_audiencias$asistentes.representa.nombre,paste0("(?i)",representado)), ]
+  filters_auds <- total_detalle_audiencias[stringr::str_detect(total_detalle_audiencias$representa.nombre,paste0("(?i)", representado)), ]
 
   return(filters_auds)
-
 }
 

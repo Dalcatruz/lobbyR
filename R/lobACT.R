@@ -1,52 +1,31 @@
-
 #' Actualización resumen de datos del lobby
 #'
 #' @param resumen_lobby Muestra un resumen de el numero e instituciones, cargos_pasivos, cargos_activos y audiencias.
 #'
-#' @return un resumen de datos de instituciones, cargos_pasivos, cargos_activos y audiencias.
+#' @return Un resumen de datos de instituciones, cargos_pasivos, cargos_activos y audiencias.
 #' @export
 #'
 #' @examples
 #' lobACT(resumen_lobby=1)
-lobACT<- function() {
 
-  url1<-"https://www.leylobby.gob.cl/api/v1/instituciones/"
+lobACT <- function() {
 
-  inst <- jsonlite::fromJSON(url1, flatten = TRUE)
+  urls <- c("https://www.leylobby.gob.cl/api/v1/instituciones/",
+            "https://www.leylobby.gob.cl/api/v1/audiencias/",
+            "https://www.leylobby.gob.cl/api/v1/cargos-pasivos/",
+            "https://www.leylobby.gob.cl/api/v1/cargos-activos/")
 
-  instituciones<-inst$total
+  ctotales <- sapply(urls, function(x) jsonlite::fromJSON(x, flatten = TRUE)$total)
 
-  url2<- "https://www.leylobby.gob.cl/api/v1/audiencias/"
-
-  auds<- jsonlite::fromJSON(url2, flatten = TRUE)
-
-  audiencias<- auds$total
-
-  url3<- "https://www.leylobby.gob.cl/api/v1/cargos-pasivos/"
-
-  c_pasivos<- jsonlite::fromJSON(url3, flatten = TRUE)
-
-  cargos_pasivos<- c_pasivos$total
-
-  url4<- "https://www.leylobby.gob.cl/api/v1/cargos-activos/"
-
-  c_activos<- jsonlite::fromJSON(url4, flatten = TRUE)
-
-  cargos_activos<- c_activos$total
-
-  aud_by_inst<- audiencias/instituciones
-
-  aud_by_cpas<- audiencias/cargos_pasivos
-
-
-  resumen_lobby<- cbind.data.frame(instituciones,audiencias, cargos_pasivos,cargos_activos, aud_by_inst,aud_by_cpas)
-
-
+  resumen_lobby <- round(c(ctotales, ctotales[2]/ctotales[1], ctotales[2]/ctotales[3]), 1)
+  resumen_lobby <- setNames(resumen_lobby, c("instituciones",
+                                             "audiencias",
+                                             "cargos_pasivos",
+                                             "cargos_activos",
+                                             "aud_by_inst",
+                                             "aud_by_cpas"))
 
   return(resumen_lobby)
-
-
-
 }
 
 
