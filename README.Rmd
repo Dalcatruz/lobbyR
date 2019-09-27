@@ -26,8 +26,6 @@ remotes::install_github("Dalcatruz/lobbyR")
 
 ```{r example}
 library(lobbyR)
-
-## basic example code
 ```
 
 ## Ejemplo
@@ -42,7 +40,7 @@ lobACT()
 ### Recoger audiencias por pagina
 
 ```{r}
-mis_audiencias<- get_audiencias_pag(1)
+mis_audiencias <- get_audiencias_pag(1)
 mis_audiencias
 ```
 
@@ -50,7 +48,7 @@ mis_audiencias
 ### Recoger audiencias por página y algún concepto clave
 
 ```{r}
-mis_audiencias2<- get_audiencias_detalles_activo(1,"ureta")
+mis_audiencias2 <- get_audiencias_detalles_activo(1, "ureta")
 mis_audiencias2
 ```
 
